@@ -1,1 +1,74 @@
-{\rtf1}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<title>Adopt</title>
+	<link rel="stylesheet" href="styles.css" type="text/css">
+  </head>
+  <body>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="volunteer.html">Volunteer</a></li>
+        <li><a href="adopt.html">Adopt</a></li>
+    </ul>
+    <h2>Want to adopt a rat?</h2>
+    <h4>Fill out this form and we will get back to you!</h4>
+    <form method="POST">
+        <fieldset class="adoptForm">
+            <legend>Contact Information</legend>
+            <legend>Personal Information</legend>
+            <label for="firstname">First name:</label>
+            <input type="text" id="firstname"><br>
+            <label for="lastname">Last name:</label>
+            <input type="text" id="lastname"><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email"><br>
+            <label for="phonenum">Phone number</label>
+            <input type="tel" id="phonenum"><br>
+        </fieldset>
+        <fieldset class="adoptForm">
+            <legend>Experience</legend>
+            <span>Are you at least 18 years old?</span>
+            <label>Yes</label>
+            <input type="checkbox" value="Yes">
+            <label>No</label>
+            <input type="checkbox" value="No"><br>
+            <span>Have you ever adopted a rat before?</span>
+            <label>Yes</label>
+            <input type="checkbox" value="Yes">
+            <label>No</label>
+            <input type="checkbox" value="No"><br>      
+        </fieldset>
+        <fieldset class="adoptForm">
+            <legend>Preferences</legend>
+            <p>Rats should never be alone because they are social animals.<br> 
+            Therefore, we do not allow the adoption of only one rat.</p>
+            <label for="ratSectionOne">Which rat would you like to adopt as your first rat?</label>
+            <select id="ratSectionOne" name="ratSectionOne">
+                <option value="Crinkles">Crinkles</option>
+                <option value="Prishe">Prishe</option>
+                <option value="Higgins">Higgins</option>
+                <option value="Bismarck">Bismarck</option>
+                <option value="PuttPutt">Putt-Putt></option>
+                <option value="Omar">Omar</option>
+                <option value="noPref">No Preference</option>
+            </select><br>
+            <label for="ratSectionTwo">Which rat would you like to adopt as your second rat?</label>
+            <select id="ratSectionTwo" name="ratSectionTwo">
+                <option value="Crinkles">Crinkles</option>
+                <option value="Prishe">Prishe</option>
+                <option value="Higgins">Higgins</option>
+                <option value="Bismarck">Bismarck</option>
+                <option value="PuttPutt">Putt-Putt></option>
+                <option value="Omar">Omar</option>
+                <option value="noPref">No Preference</option>
+            </select><br>
+        </fieldset>
+        <fieldset class="adoptForm">
+            <input type="submit" name="Submit" id="adoptSubmit">
+        </fieldset>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
