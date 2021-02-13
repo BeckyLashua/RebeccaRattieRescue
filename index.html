@@ -6,12 +6,30 @@
 	<link rel="stylesheet" href="styles.css" type="text/css">
   </head>
   <body>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="volunteer.html">Volunteer</a></li>
-        <li><a href="adopt.html">Adopt</a></li>
-    </ul>
+    <section class="menu"> 
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="volunteer.html">Volunteer</a></li>
+            <li><a href="adopt.html">Adopt</a></li>
+        </ul>
+    </section>
+    <section id="ratCarousel">
+        <h2>Check out our rats!</h2>
+        <img id="ratPic" src="images/Crinkles.jpg" alt="rat looking up at camera" style="width:100px">
+        <div id="scrollBox"></div>
+
+    </section>
+    <section id="resources">
+        <h3>Resources:</h3>
+        <label for="downloadBtn">Download the American Society for Prevention
+            of Cruelty to Animals Rat Care Guide! 
+        </label><br>
+        <button id="downloadBtn">
+            <a href="https://www.aspca.org/sites/default/files/rat_care.pdf" download
+                target="_blanket">Download</a>
+        </button>
+    </section>
     
     <script src="script.js"></script>
   </body>

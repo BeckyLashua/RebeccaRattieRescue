@@ -1,3 +1,13 @@
 .adoptForm {
-    width: 600px
+    width: 600px;
+}
+
+#downloadBtn a {
+    text-decoration: none;
+}
+
+#scrollBox {
+    height: 200px;
+    width: 200px;
+    overflow: scroll;
 }
