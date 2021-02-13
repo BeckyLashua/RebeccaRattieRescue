@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     let rats = {
         "0": {   
             "name": "Prishe", 
-            "imgUrl": "images/Prishe.png", 
+            "imgUrl": "images/Prishe.jpg", 
             // ADD IMAGE DESCRIPTION
             "age": 19, 
             "sex": "female", 
@@ -12,35 +12,35 @@ document.addEventListener('DOMContentLoaded', function(event) {
             "description": ""},
         "1": {   
             "name": "Crinkles", 
-            "imgUrl": "images/Crinkles.png", 
+            "imgUrl": "images/Crinkles.jpg", 
             "age": 20, 
             "sex": "female", 
             "favoriteTreat": "Yogurt Drops", 
             "description": ""},
         "2":{
             "name": "Omar", 
-            "imgUrl": "images/Omar.png", 
+            "imgUrl": "images/Omar.jpg", 
             "age": 15, 
             "sex": "male", 
             "favoriteTreat": "Hummus", 
             "description": ""},
         "3":{   
             "name": "Putt-Putt", 
-            "imgUrl": "images/Puttputt.png", 
+            "imgUrl": "images/Puttputt.jpg", 
             "age": 12, 
             "sex": "male", 
             "favoriteTreat": "Cheerios", 
             "description": ""},
         "4":{
             "name": "Higgens", 
-            "imgUrl": "images/Higeens.png", 
+            "imgUrl": "images/Higeens.jpg", 
             "age": 6, 
             "sex": "male", 
             "favoriteTreat": "Carrots", 
             "description": ""},
         "5":{
             "name": "Bismarck", 
-            "imgUrl": "images/Crinkles.png", 
+            "imgUrl": "images/Crinkles.jpg", 
             "age": 26, 
             "sex": "male", 
             "favoriteTreat": "British Tea Biscuits", 
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
         // Update pic in scrollbox
         let ratImage = document.getElementById('ratImg');
-        ratImage.setAttribute("src", rat.ratImg);
+        ratImage.setAttribute("src", rat.imgUrl);
 
         // Update rat name in scrollbox
         let name = document.getElementById("ratName");
