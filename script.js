@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
             "description": ""},
         "3":{   
             "name": "Putt-Putt", 
-            "imgUrl": "images/Puttputt.jpg", 
+            "imgUrl": "images/puttputt.jpg", 
             "imgAlt": "a rat looking at camera",
             "age": 12, 
             "sex": "male", 
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
             "description": ""},
         "5":{
             "name": "Bismarck", 
-            "imgUrl": "images/Crinkles.jpg", 
+            "imgUrl": "images/Bismarck.jpg", 
             "imgAlt": "furless rat standing still",
             "age": 26, 
             "sex": "male", 
@@ -61,25 +61,25 @@ document.addEventListener('DOMContentLoaded', function(event) {
         ratPic.setAttribute('src', rats[i].imgUrl);
         ratPic.setAttribute('alt', rats[i].imgAlt);
         ratPic.classList = "ratPic";
-        ratPic.onclick = 'onclickRat(+'+this+')';
+        /*fnArr[i] = function(x){
+            return function(){
+                console.log(x);
+            };
+    	}(i); */
+        ratPic.addEventListener('click', ((x) => {
+            return function() {
+                onclickRat(rats[x]);
+            };
+        })(i));
         ratPic.style.width = '100px';
 
         // append it to picSection
         picSection.appendChild(ratPic);
     } 
+  
 
-    // returns the info of a rat 
-    function getRat(rat) {
-        // Find the rat 
-        let ratId = rat.id;
-        // Return rat
-        return rats[ratId];
-    }
     // Get function for retrieving JSON data for a rat
-    function onclickRat(ratObj) {
-        // Get info from target rat
-        let rat = getRat(ratObj.target);
-
+    function onclickRat(rat) {
         // Update pic in scrollbox
         let ratImage = document.getElementById('ratImg');
         ratImage.setAttribute("src", rat.imgUrl);
