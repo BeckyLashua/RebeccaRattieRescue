@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         "0": {   
             "name": "Prishe", 
             "imgUrl": "images/Prishe.jpg", 
-            // ADD IMAGE DESCRIPTION
+            "imgAlt": "rat looking around curiously",
             "age": 19, 
             "sex": "female", 
             "favoriteTreat": "Grapes", 
@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
         "1": {   
             "name": "Crinkles", 
             "imgUrl": "images/Crinkles.jpg", 
+            "imgAlt": "rat in a coconut",
             "age": 20, 
             "sex": "female", 
             "favoriteTreat": "Yogurt Drops", 
@@ -20,20 +21,23 @@ document.addEventListener('DOMContentLoaded', function(event) {
         "2":{
             "name": "Omar", 
             "imgUrl": "images/Omar.jpg", 
+            "imgAlt": "rat in a blanket",
             "age": 15, 
             "sex": "male", 
-            "favoriteTreat": "Hummus", 
+            "favoriteTreat": "Cheetos", 
             "description": ""},
         "3":{   
             "name": "Putt-Putt", 
             "imgUrl": "images/Puttputt.jpg", 
+            "imgAlt": "a rat looking at camera",
             "age": 12, 
             "sex": "male", 
             "favoriteTreat": "Cheerios", 
             "description": ""},
         "4":{
             "name": "Higgens", 
-            "imgUrl": "images/Higeens.jpg", 
+            "imgUrl": "images/Higgens.jpg", 
+            "imgAlt": "baby rat standing still",
             "age": 6, 
             "sex": "male", 
             "favoriteTreat": "Carrots", 
@@ -41,22 +45,47 @@ document.addEventListener('DOMContentLoaded', function(event) {
         "5":{
             "name": "Bismarck", 
             "imgUrl": "images/Crinkles.jpg", 
+            "imgAlt": "furless rat standing still",
             "age": 26, 
             "sex": "male", 
             "favoriteTreat": "British Tea Biscuits", 
             "description": ""}
         };
 
- 
+    // Display rats in carousel
+    for (i in rats) {
+        let picSection = document.getElementById('ratCarousel');
+        
+        // add src, alt attributes, and class and id names
+        let ratPic = document.createElement('img');
+        ratPic.setAttribute('src', rats[i].imgUrl);
+        ratPic.setAttribute('alt', rats[i].imgAlt);
+        ratPic.classList = "ratPic";
+        ratPic.onclick = 'onclickRat(+'+this+')';
+        ratPic.style.width = '100px';
 
+        // append it to picSection
+        picSection.appendChild(ratPic);
+    } 
+
+    // returns the info of a rat 
+    function getRat(rat) {
+        // Find the rat 
+        let ratId = rat.id;
+        // Return rat
+        return rats[ratId];
+    }
     // Get function for retrieving JSON data for a rat
-    function getRat(ratId) {
-        // use rat id to retrieve data
-        let rat = rats[ratId];
+    function onclickRat(ratObj) {
+        // Get info from target rat
+        let rat = getRat(ratObj.target);
 
         // Update pic in scrollbox
         let ratImage = document.getElementById('ratImg');
         ratImage.setAttribute("src", rat.imgUrl);
+
+        // Update img description
+        ratImage.setAttribute("alt", rat.imgAlt);
 
         // Update rat name in scrollbox
         let name = document.getElementById("ratName");
@@ -79,8 +108,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
         description.textContent = rat.description;
         }
 
-    // Add event listener for carousel clicks
-    document.getElementById('ratPic').addEventListener('click', getRat("1")); 
 }) 
 
 
